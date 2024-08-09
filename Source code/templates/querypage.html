@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QueryAI query-page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='querypage.js') }}"></script>
+</head>
+<body>
+    <div class="containerdb" id="form-container">
+        <h1>Chat with our <span class="projectName">QueryAI</span></h1>
+
+        <!-- Database Details Form -->
+        <div class="avatar"></div>
+        <form method="post" id="db-form" class="form-container">
+            <h2>Enter Database Connection Details</h2>
+            <input type="hidden" name="form_type" value="db_details">
+            <label for="host">Host:</label>
+            <input type="text" id="host" name="host" required><br><br>
+            
+            <label for="user">User:</label>
+            <input type="text" id="user" name="user" required><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <label for="database">Database:</label>
+            <input type="text" id="database" name="database" required><br><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <div id="notification-db"></div> <!-- Notification for DB details submission -->
+    </div>
+
+    <div class="containerdb" id="tables-container" style="display:none;">
+        <h2>Tables in the Database</h2>
+        <ul id="tables-list"></ul>
+        <button id="continue-btn">Continue to Ask Question</button>
+    </div>
+
+    <div class="container" id="query-container" style="display:none;">
+        <h1>Ask your question to <span class="projectName">QueryAI</span></h1>
+        <form method="post" id="query-form" class="form-container">
+            <input type="hidden" name="form_type" value="query">
+            <input type="text" id="question" name="question" required placeholder="Enter your question...!"><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <div id="notification-query"></div> <!-- Notification for query submission -->
+
+        <!-- Query Results Section -->
+        <div class="results-container">
+            <div class="results-header">Query Results</div>
+            <div id="query-results" class="scrollable"></div>
+        </div>
+        <button id="download-btn" style="display:none;" onclick="downloadResults()">Download Results</button>
+        <button id="visualize-btn" style="display:none;" onclick="showVisualizationOptions()">Visualize Results</button>
+        
+        <!-- Visualization Section -->
+         <!-- Visualization Section -->
+        <div id="visualization-options" style="display:none;">
+    <h2>Visualize Query Results</h2>
+    <div>
+        
+        <label>Select Chart Types:</label>
+        <div id="chart-type-container" class="scrollablechart">
+            <label><input type="checkbox" value="pie"> Pie Chart</label>
+            <label><input type="checkbox" value="bar"> Bar Graph</label>
+            <label><input type="checkbox" value="line"> Line Plot</label>
+            <label><input type="checkbox" value="doughnut"> Doughnut Chart</label>
+            <label><input type="checkbox" value="histogram"> Histogram</label>
+            <label><input type="checkbox" value="scatter"> Scatter Plot</label>
+        </div>
+    </div>
+    <div>
+        <label for="x-axis">Select X-Axis Column:</label>
+        <select id="x-axis"></select>
+    </div>
+    <div>
+        <label for="y-axis">Select Y-Axis Column:</label>
+        <select id="y-axis"></select>
+    </div>
+    <div id="scatter-options" style="display:none;">
+        <label for="scatter-data">Select Data Points Column for Scatter Plot:</label>
+        <select id="scatter-data"></select>
+    </div>
+    <button id="generate-charts" onclick="generateCharts()">Generate Charts</button>
+        </div>
+
+        <div id="chart-container">
+            <div id="bar-line-container" style="display: flex;">
+                <div id="bar-container" style="flex: 1;">
+                    <canvas id="bar-chart" style="display:none; height: 150px; width: 100%;"></canvas>
+                    <button id="download-bar" style="display:none;" onclick="downloadChart('bar-chart')">Download Bar Chart</button>
+                </div>
+                <div id="line-container" style="flex: 1;">
+                    <canvas id="line-chart" style="display:none; height: 150px; width: 100%;"></canvas>
+                    <button id="download-line" style="display:none;" onclick="downloadChart('line-chart')">Download Line Chart</button>
+                </div>
+            </div>
+            <div id="pie-container" style="margin-top: 20px;">
+                <canvas id="pie-chart" style="display:none; height: 150px; width: 100%;"></canvas>
+                <button id="download-pie" style="display:none;" onclick="downloadChart('pie-chart')">Download Pie Chart</button>
+            </div>
+        </div>
+        
+        
+    </div>
+
+    <!-- Notification for saving DB details -->
+    <div id="notification-save" class="notification hidden">
+        <p>Do you want to save the database details for future use?</p>
+        <button onclick="saveDetails()">Yes</button>
+        <button onclick="dismissNotification()">No</button>
+    </div>
+
+
+    
+
+</body>
+</html>

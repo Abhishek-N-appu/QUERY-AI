@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>QueryAI</title>
+</head>
+
+<body style="background-color: rgb(147, 103, 188);">
+    <section class="sub-header">
+        <nav>
+            <a href="{{ url_for('index') }}" class="projectName">QueryAI</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">HOME</a></li>
+                    <li><a>INTRO</a></li>
+                    <li><a href="{{ url_for('team') }}">TEAM MEMBERS</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <h1>About us</h1>
+    </section>
+
+    <div class="container_1">
+        <h1 style="color: rgb(222, 19, 19); margin-bottom: 5px;">Bit Wizards</h1>
+        
+
+        <div class="sub_container" data-aos="zoom-in-up">
+            <div class="teams">
+                <img src="../static/Abhi.jpg" alt="ABHISHEK" style="width: 190px; height: 190px; border-radius: 50%;">
+                <div class="name" style="color: navy;">ABHISHEK.N</div>
+                <div class="desig">ENG21DS0003</div>
+                <div class="about">Student At Dayananda Sagar University (CSE-DS) </div>
+                <div class="social-links_1">
+                    
+                    <a href="https://www.instagram.com/a.b.h.i.s.h.e.kn/"><i class="fa-brands fa-instagram"></i></a>
+                    
+                    <a href="https://www.linkedin.com/in/abhishek-n-1a0384233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+                    
+                </div>
+            </div>
+
+            
+            <div class="teams">
+                <img src="static\chandan.jpg" alt="Chandan" style="width: 190px; height: 190px; border-radius: 50%;">
+                <div class="name" style="color: navy;">Chandan Neralgi</div>
+                <div class="desig">ENG21AM0022</div>
+                <div class="about">Student At Dayananda Sagar University (CSE-AIML) </div>
+                <div class="social-links_1">
+                    
+                    <a href="https://www.instagram.com/chandan_neralgi/"><i class="fa-brands fa-instagram"></i></a>
+                    
+                    <a href="https://www.linkedin.com/in/chandan-neralgi-b4bb51210/"><i class="fa-brands fa-linkedin"></i></a>
+                    
+                </div>
+            </div>
+
+            <div class="teams">
+                <img src="../static/Bharath.k.jpg"  alt="Bharath" style="width: 190px; height: 190px; border-radius: 50%;">
+                <div class="name" style="color: navy;">Bharath.K</div>
+                <div class="desig">ENG21AM0016</div>
+                <div class="about">Student At Dayananda Sagar University (CSE-AIML)  </div>
+                <div class="social-links_1">
+                    
+                    <a href="https://www.instagram.com/bharat_jpeg_/"><i class="fa-brands fa-instagram"></i></a>
+                 
+                    <a href="https://www.linkedin.com/in/bharatkarigoudar/"><i class="fa-brands fa-linkedin"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    
+   
+    <section class="footer">
+        
+       
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 200, // offset (in px) from the original trigger point
+        duration: 600
+      });
+    </script>
+</body>
+
+</html>

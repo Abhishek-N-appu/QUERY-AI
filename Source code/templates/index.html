@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <title>QueryAI</title>
+</head>
+
+<body style="background-color: aquamarine;" background="static/bg1.jpg">
+    <section class="header">
+        <nav>
+            <a href="{{ url_for('index') }}" class="projectName">QueryAI</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">HOME</a></li>
+                    <li><a href="#" id="introLink" data-bs-toggle="modal" data-bs-target="#staticBackdrop">INTRO</a></li>
+                    <li><a href="{{ url_for('team') }}">TEAM MEMBERS</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Welcome to <span class="projectName" style="font-size: 75px;">QueryAI</span></h1>
+            
+            <h3>Streamline your data access with our AI-powered chat interface. Easily query internal databases using natural language and receive precise answers, interactive visualizations, and tailored insights.</h3>
+            <a href="{{ url_for('querypage') }}" class="hero-btn">GET STARTED</a>
+        </div>
+    </section>
+
+    <!-- Scrollable modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Intro to <span class="projectName" style="font-size: 28px;">QueryAI</span></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>The <span class="projectName" style="font-size: 20px;">QueryAI</span> project aims to streamline and enhance the process of accessing and understanding client data stored in internal databases through a user-friendly chat interface. Leveraging a Large Language Model (LLM), this AI-powered solution allows organization members to query the database using natural language and receive accurate, contextually relevant responses, complete with interactive data visualizations, proactive insights, and personalized recommendations.</span>
+                    <hr>
+                    <h5>Steps to work with <span class="projectName" style="font-size: 23px;">QueryAI</span>: </h5>
+                    <ul>
+                        <li> <strong>Step 1:</strong> Click on <i>Get Started.</i></li>
+                        <li> <strong>Step 2:</strong> Enter Database Connection Details such as Host name, User, Password and Database name.</li>
+                        <li> <strong>Step 3:</strong> Verify the tables present in your database and click on Continue to ask question button.</li>
+                        <li> <strong>Step 4:</strong> Enter your question releted your database and click on submit.</li>
+                        <li> <strong>Step 5:</strong> The results for the given question will be shown in the table form. Then you can download the result or you can visualize it.</li>
+                        <li> <strong>Step 6:</strong> For visualization click on <i>Visualize Result</i> select the visualization techniques select x-axis and y-axis attributes and click on <i>Generate Charts</i>. Then all the selected graphs are plotted and displayed you can download it for further use.</li>
+                    </ul>
+
+                    <hr>
+                    <h5><i>Thank You</i></h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary" href="#">GET STARTED</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var introText = document.getElementById('introText');
+            var introLink = document.getElementById('introLink');
+
+            introLink.addEventListener('click', function(event) {
+                event.stopPropagation();
+                introText.style.display = (introText.style.display === 'block') ? 'none' : 'block';
+            });
+
+            document.body.addEventListener('click', function(event) {
+                if (!introLink.contains(event.target) && introText.style.display === 'block') {
+                    introText.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <script>
+        function hideMenu() {
+            document.getElementById('navLinks').style.display = 'none';
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+
+</html>
