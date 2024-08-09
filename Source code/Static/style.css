@@ -1,0 +1,384 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #114345;
+    color: #fff;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.5s;
+}
+.containerdb {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 50%;
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.5s;
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1, h2 {
+    text-shadow: rgba(16, 16, 16, 0.82) 1px 0 10px;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+.form-containerdb {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+.form-containerdb input[type="text"],
+.form-containerdb input[type="password"]{
+    border-radius: 15px; /* Adjust this value to increase the radius */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="radio"] {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 80%;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="radio"]:focus {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+input[type="radio"] {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 25%;
+    height: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #1de099, #1dc8cd);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #1dc8cd, #1de099);
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* 3D Effect and Transitions */
+.form-container, .container {
+    perspective: 1000px;
+}
+
+.form-container, .container, input, button {
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+}
+
+.form-container:hover, .container:hover, input:hover, button:hover {
+    transform: rotateY(0deg);
+}
+
+input[type="radio"]:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+input[type="radio"]:checked {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+div.success {
+    color: lime;
+}
+
+div.error {
+    color: red;
+}
+
+.projectName {
+    font-family: "Oleo Script", cursive;
+    color: #fd790c;
+    font-size: 45px;
+}
+
+#notification {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Additional Styles for Buttons */
+#continue-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #1e90ff, #87cefa);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+#continue-btn:hover {
+    background: linear-gradient(45deg, #87cefa, #1e90ff);
+    transform: scale(1.05);
+}
+
+#query-results {
+    margin-top: 20px;
+}
+.hidden {
+    display: none;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #041a30;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.notification button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notification button:hover {
+    background-color: #0056b3;
+}
+.results-container {
+    position: relative;
+    max-width: 100%;
+    background-color: #6d51c9; /* Adjust color as needed */
+    border: 1px solid #020913;
+}
+
+.results-header {
+    background-color: #210f485b; /* Adjust color as needed */
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000000;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.scrollable {
+    max-height: 200px; /* Adjust height to show 5 rows before scrolling */
+    overflow-y: auto;
+}
+
+/* Overall form styling */
+#visualization-options {
+    background-color: #5fb5d4; /* Light background color */
+    border: 1px solid #ccc; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 70%; /* Maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Heading styling */
+#visualization-options h2 {
+    margin-top: 0;
+    color: #333; /* Dark text color */
+}
+
+/* Styling for labels and select elements */
+#visualization-options label {
+    display: block; /* Ensure labels are on separate lines */
+    margin-bottom: 10px; /* Space below each label */
+    color: #555; /* Slightly lighter text color */
+}
+
+#visualization-options select {
+    width: 100%; /* Full width of the container */
+    padding: 8px; /* Padding inside the select */
+    border: 1px solid #211414; /* Border around the select */
+    border-radius: 7px; /* Rounded corners */
+    max-width: 75%; /* Maximum width of the form */
+}
+
+/* Styling for the scrollable chart types container */
+.scrollablechart {
+    max-height: 50px; /* Adjust height to show a few rows before scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #cfdade; /* Light background color */
+    border: 1px solid #200606; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px; /* Padding inside the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 70%; /* Maximum width of the form */
+    margin: 0 auto;/* Padding inside the container */
+}
+
+.scrollablechart label {
+    display: block; /* Ensure each checkbox label is on a new line */
+    margin-bottom: 5px; /* Space below each checkbox label */
+}
+
+/* Button styling */
+#visualization-options button {
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#visualization-options button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #331212;
+}
+
+td {
+    padding: 8px;
+}
+#chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the charts */
+}
+
+#chart-container .chart-wrapper {
+    width: 40%;
+    margin: 1.5%;
+    background: #fbf8f8;
+    border: 1px solid #0f0505;
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chart-container .single-chart-wrapper {
+    width: 50%; /* Smaller width for single chart */
+    background: #6ab7ff;
+    border: 1px solid #0f0505;
+    border-radius: 8px;
+    max-width: 600px; /* Maximum width to avoid too large charts */
+}
+
+#chart-container .chart-wrapper canvas {
+    width: 80%; /* Full width of the wrapper */
+    height: 200px;
+}
+
+#chart-container .chart-wrapper button {
+    margin-top: 5px;
+}
